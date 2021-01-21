@@ -5,11 +5,11 @@ import lib.Functions as f
 
 
 def genwin():
-    var.layout =[	[sg.Text('', key='passShow', size=(7,1))],
-                    [sg.Button('1'),sg.Button('2'),sg.Button('3')],
-                    [sg.Button('4'),sg.Button('5'),sg.Button('6')],
-                    [sg.Button('7'),sg.Button('8'),sg.Button('9')],
-                    [sg.Button('Correct'),sg.Button('0'),sg.Button('Home')]]
+    var.layout =[	[sg.Text('', key='passShow', size=(7,1), font=("helvetica",25))],
+                    [sg.Button('1', font=("helvetica",25)),sg.Button('2', font=("helvetica",25)),sg.Button('3', font=("helvetica",25))],
+                    [sg.Button('4', font=("helvetica",25)),sg.Button('5', font=("helvetica",25)),sg.Button('6', font=("helvetica",25))],
+                    [sg.Button('7', font=("helvetica",25)),sg.Button('8', font=("helvetica",25)),sg.Button('9', font=("helvetica",25))],
+                    [sg.Button('Correct', font=("helvetica",25)),sg.Button('0', font=("helvetica",25)),sg.Button('Home', font=("helvetica",25))]]
 
     var.window = sg.Window('Admin Login', var.layout, size=(1024,600))
 
@@ -22,6 +22,7 @@ def events():
         if var.passw == var.correctPass:
             var.LoggedIn = True
             var.window.close()
+            f.exgenwin()
         else:
             var.passw = ''
     elif var.event in var.numbers:
